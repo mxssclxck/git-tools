@@ -68,6 +68,22 @@ git log -S 'func globalPluginDirs(' --pretty=format:"%h - %s"
 
 ![alt text](img/2_5.png)
 
+### Доработка 6 задания
+
+Находим файл где присутствует функция globalPluginDirs
+
+```commandline
+git grep -o --heading --break -e 'func globalPluginDirs'
+```
+
+Следующим этапом найдем коммиты с изменениями функции (включая первоначальное создание)
+
+```commandline
+git log -L:'globalPluginDirs':plugins.go --oneline -q
+```
+
+![alt text](img/2_5_1.png)
+
 7. Кто автор функции synchronizedWriters?
 
 Для того, чтобы найти автора функции synchronizedWriters:
